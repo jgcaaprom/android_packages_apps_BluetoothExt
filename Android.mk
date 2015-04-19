@@ -14,6 +14,9 @@ ifeq ($(BOARD_USES_WIPOWER),true)
            src_dirs += src/org/codeaurora/bluetooth/a4wp
 endif
 
+LOCAL_CC  := $$(TARGET_TOOLCHAIN_ROOT)/../arm-linux-androideabi-4.8/bin/arm-linux-androideabi-gcc$$(HOST_EXECUTABLE_SUFFIX)
+LOCAL_CXX := $$(TARGET_TOOLCHAIN_ROOT)/../arm-linux-androideabi-4.8/bin/arm-linux-androideabi-g++$$(HOST_EXECUTABLE_SUFFIX)
+
 LOCAL_SRC_FILES := \
         $(call all-java-files-under, $(src_dirs)) \
         src/org/codeaurora/bluetooth/pxpservice/IPxpService.aidl
